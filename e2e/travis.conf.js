@@ -9,7 +9,6 @@ exports.config = {
   capabilities: {
   	browserName: 'chrome'
   },
-  directConnect: true,
   cucumberOpts: {
   	require:'./step_definitions/*.js'
   },
