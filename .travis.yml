@@ -4,4 +4,5 @@ node_js:
 before_script:
   - npm install -g grunt
   - npm i
+  - ./node_modules/protractor/bin/webdriver-manager update
 script: grunt e2e-local
