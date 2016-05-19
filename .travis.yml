@@ -4,10 +4,12 @@ node_js:
 before_script:
   - npm install -g grunt
   - npm i
-  - sleep 3
-  - ./node_modules/protractor/bin/webdriver-manager update
-  - wget http://selenium-release.storage.googleapis.com/2.52/selenium-server-standalone-2.52.0.jar
-  - java -jar selenium-server-standalone-2.52.0.jar > /dev/null &
+  - sh -e /etc/init.d/xvfb start
+  - nohup bash -c "./node_modules/protractor/bin/webdriver-manager start 2>&1 &"
+  - sleep 5
+  # - ./node_modules/protractor/bin/webdriver-manager update
+  # - wget http://selenium-release.storage.googleapis.com/2.52/selenium-server-standalone-2.52.0.jar
+  # - java -jar selenium-server-standalone-2.52.0.jar > /dev/null &
   # 
   # - ./node_modules/protractor/bin/webdriver-manager start
 script: grunt e2e-travis
