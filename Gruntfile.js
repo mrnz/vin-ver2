@@ -13,7 +13,10 @@ module.exports = function(grunt){
 	    },
 	    e2e_local: {
 	      configFile: "./e2e/conf.js"
-	    }
+	    },
+	    e2e_travis: {
+	      configFile: "./e2e/travis.conf.js"
+	    },
 	  },
 
 	
@@ -36,6 +39,7 @@ module.exports = function(grunt){
 
 
 	grunt.registerTask('e2e-local', ["protractor:e2e_local"]);
+	grunt.registerTask('e2e-travis', ["protractor:e2e_travis"]);
 	grunt.registerTask('build', ["shell:target"]);
 
 
