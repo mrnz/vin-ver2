@@ -5,13 +5,13 @@ var serveStatic = require('serve-static');
 var expect = chai.expect;
 chai.use(chaiAsPromised);
 
-var baseURL = 'http://www.localhost:58765/www/build/index.html'
+var baseURL = 'http://www.localhost:8065/www/build/index.html'
 
 module.exports = function () {
 	
 	this.Given(/^Start server$/, function (next) {
     
-  	connect().use(serveStatic("/home/travis/build/mrnz/vin-ver2/")).listen(58765, function(){
+  	connect().use(serveStatic("./")).listen(8065, function(){
 			next();
 		})	
 
