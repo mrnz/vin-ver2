@@ -65,7 +65,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-exec');
 
-	grunt.registerTask('e2e-local', ["exec","protractor:e2e_local"]);
+	grunt.registerTask('e2e-local', ["protractor:e2e_local"]);
 	grunt.registerTask('e2e-travis', ["protractor:e2e_travis"]);
 	grunt.registerTask('e2e-exec', ["exec"]);
 	grunt.registerTask('build', ["shell:target"]);
