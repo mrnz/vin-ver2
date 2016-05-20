@@ -11,7 +11,7 @@ module.exports = function () {
 	
 	this.Given(/^Start server$/, function (next) {
     
-  	connect().use(serveStatic("./")).listen(8065, function(){
+  	connect().use(serveStatic("/home/travis/build/mrnz/vin-ver2/")).listen(8065, function(){
 			next();
 		})	
 
