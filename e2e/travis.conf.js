@@ -9,8 +9,8 @@ exports.config = {
   capabilities: {
   	browserName: 'firefox'
   },
-
  
+  directConnect: true,
   cucumberOpts: {
   	require:'./step_definitions/*.js'
   },
