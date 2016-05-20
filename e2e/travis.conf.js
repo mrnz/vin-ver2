@@ -7,10 +7,10 @@ exports.config = {
   specs: ['./features/*.feature'],
 
   capabilities: {
-  	browserName: 'chrome'
+  	browserName: 'firefox'
   },
 
-  directConnect: true,
+
   cucumberOpts: {
   	require:'./step_definitions/*.js'
   },
