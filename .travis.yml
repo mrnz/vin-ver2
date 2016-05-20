@@ -10,7 +10,4 @@ before_script:
   - ./node_modules/protractor/bin/webdriver-manager update --standalone --firefox
   - ./node_modules/protractor/bin/webdriver-manager start 2>&1 &
   - sleep 3
-script: 
-  - grunt e2e-exec
-  - grunt e2e-travis
-
+script: grunt e2e-travis
