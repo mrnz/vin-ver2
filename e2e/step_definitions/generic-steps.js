@@ -5,20 +5,20 @@ var serveStatic = require('serve-static');
 var expect = chai.expect;
 chai.use(chaiAsPromised);
 
-var baseURL = 'http://www.localhost:37940/www/build/index.html'
+var baseURL = 'https://angularjs.org/'
 
 module.exports = function () {
 	
 	this.Given(/^Start server$/, function (next) {
     
-  	connect().use(serveStatic("./")).listen(37940, function(){
+  	// connect().use(serveStatic("./")).listen(37940, function(){
 			next();
-		})	
+		// })	
 
     
   });
 
-  this.Then(/^Open app page$/, function (next) {
+  this.Then(/^Open app page$/, {timeout: 20 * 1000}, function (next) {
    
     browser.get(baseURL).then(function () {
       browser.waitForAngular();
