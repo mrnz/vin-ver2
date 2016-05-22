@@ -50,10 +50,18 @@ module.exports = function(grunt){
 		    }
 		  }
 		},
+		
 		exec: {
 		  start_server: {
 		    command: 'grunt connect &'
 		  }
+		},
+
+
+		karma: {
+	  	unit: {
+	    	configFile: 'karma.conf.js'
+	  	}
 		}
 
 

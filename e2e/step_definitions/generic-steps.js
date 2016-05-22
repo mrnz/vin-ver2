@@ -5,26 +5,32 @@ var serveStatic = require('serve-static');
 var expect = chai.expect;
 chai.use(chaiAsPromised);
 
-var baseURL = 'http://www.localhost:37940/www/build/index.html'
+var baseURL = 'http://www.localhost:8098/'
 
 module.exports = function () {
 	
 	this.Given(/^Start server$/, function (next) {
     
-  	connect().use(serveStatic("./")).listen(37940, function(){
-			next();
-		})	
-
+  // 	connect().use(serveStatic("./")).listen(37940, function(){
+		// 	next();
+		// })	
+    connect().use(function middleware1(req, res, next) {
+      res.writeHead(301, {Location: 'https://angularjs.org'});
+      res.end();
+      
+    }).listen(8098, function(){
+     next();
+    });    
     
   });
 
-  this.Then(/^Open app page$/, function (next) {
+  this.Then(/^Open app page$/,{timeout: 20000},  function (next) {
    
     browser.get(baseURL).then(function () {
       browser.waitForAngular();
 
       browser.getCurrentUrl().then(function(currentUrl){
-     		expect( currentUrl ).to.be.equal(baseURL);
+     		expect( currentUrl ).to.be.equal('https://angularjs.org/');
      		next()
       });
 
