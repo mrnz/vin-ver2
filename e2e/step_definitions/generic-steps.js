@@ -17,8 +17,10 @@ module.exports = function () {
     connect().use(function middleware1(req, res, next) {
       res.writeHead(301, {Location: 'https://angularjs.org'});
       res.end();
+      console.log('-------------request')
       
     }).listen(8098, function(){
+      console.log('-------------2')
      next();
     });    
     
