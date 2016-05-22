@@ -1,0 +1,49 @@
+body {
+  height: 10px;
+}
+
+#content-box {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+ul li:nth-child(11) {
+  background-color: #e60000;
+}
+ul li:nth-child(11):hover {
+  background-color: #19ffff;
+  cursor: pointer;
+}
+
+ul li:nth-child(22) {
+  background-color: #cc0000;
+}
+ul li:nth-child(22):hover {
+  background-color: #33ffff;
+  cursor: pointer;
+}
+
+ul li:nth-child(33) {
+  background-color: #b30000;
+}
+ul li:nth-child(33):hover {
+  background-color: #4cffff;
+  cursor: pointer;
+}
+
+ul li:nth-child(44) {
+  background-color: #990000;
+}
+ul li:nth-child(44):hover {
+  background-color: #66ffff;
+  cursor: pointer;
+}
+
+ul li:nth-child(55) {
+  background-color: maroon;
+}
+ul li:nth-child(55):hover {
+  background-color: #7fffff;
+  cursor: pointer;
+}
