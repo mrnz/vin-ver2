@@ -17,11 +17,10 @@ module.exports = function () {
     connect().use(function middleware1(req, res, next) {
       res.writeHead(301, {Location: 'https://angularjs.org'});
       res.end();
-      console.log('-------------request')
-      
+      console.log('I see request');
     }).listen(8098, function(){
-      console.log('-------------2')
-     next();
+      console.log('server has started');
+      next();
     });    
     
   });
@@ -29,6 +28,7 @@ module.exports = function () {
   this.Then(/^Open app page$/,{timeout: 20000},  function (next) {
    
     browser.get(baseURL).then(function () {
+      
       browser.waitForAngular();
 
       browser.getCurrentUrl().then(function(currentUrl){
@@ -37,6 +37,7 @@ module.exports = function () {
       });
 
     });
+
   });
 
   this.Then(/^Test$/, function (next) {
