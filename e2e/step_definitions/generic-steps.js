@@ -37,15 +37,19 @@ module.exports = function () {
   });
 
   this.Then(/^Test page$/, function (next) {
-  	element(by.id('abc')).getText().then(function(v) {
-      element(by.id('dsadsa')).isPresent().then(function(val) {
-        console.log(val)
-        expect( val ).to.equal(true);
-        next()
-      })
-      
-      
+  	element( by.id('super-coder') ).isPresent().then(function(result) {
+      expect( result ).to.equal(true);
+      next()
     })
+     
+      // element(by.id('dsadsa')).isPresent().then(function(val) {
+      //   console.log(val)
+      //   expect( val ).to.equal(true);
+      //   next()
+      // })
+      
+      
+    
  	});
 
 
