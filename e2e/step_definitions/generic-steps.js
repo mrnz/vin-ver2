@@ -5,7 +5,7 @@ var serveStatic = require('serve-static');
 var expect = chai.expect;
 chai.use(chaiAsPromised);
 
-var baseURL = 'https://angularjs.org'
+var baseURL = 'http://localhost:8065/'
 
 module.exports = function () {
 	
