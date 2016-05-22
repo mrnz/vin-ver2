@@ -1,0 +1,63 @@
+/* line 5, ../scss/main.scss */
+body {
+  height: 10px;
+  background: url("./../img/super_coder.jpg");
+  background-repeat: no-repeat;
+}
+
+/* line 10, ../scss/main.scss */
+#content-box {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 24, ../scss/main.scss */
+ul li:nth-child(11) {
+  background-color: #e60000;
+}
+/* line 27, ../scss/main.scss */
+ul li:nth-child(11):hover {
+  background-color: #19ffff;
+  cursor: pointer;
+}
+
+/* line 24, ../scss/main.scss */
+ul li:nth-child(22) {
+  background-color: #cc0000;
+}
+/* line 27, ../scss/main.scss */
+ul li:nth-child(22):hover {
+  background-color: #33ffff;
+  cursor: pointer;
+}
+
+/* line 24, ../scss/main.scss */
+ul li:nth-child(33) {
+  background-color: #b30000;
+}
+/* line 27, ../scss/main.scss */
+ul li:nth-child(33):hover {
+  background-color: #4cffff;
+  cursor: pointer;
+}
+
+/* line 24, ../scss/main.scss */
+ul li:nth-child(44) {
+  background-color: #990000;
+}
+/* line 27, ../scss/main.scss */
+ul li:nth-child(44):hover {
+  background-color: #66ffff;
+  cursor: pointer;
+}
+
+/* line 24, ../scss/main.scss */
+ul li:nth-child(55) {
+  background-color: maroon;
+}
+/* line 27, ../scss/main.scss */
+ul li:nth-child(55):hover {
+  background-color: #7fffff;
+  cursor: pointer;
+}
