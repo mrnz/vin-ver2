@@ -4,7 +4,7 @@ Feature: Test
 	Scenario: test 1
 		Given Start server
 		Then Open app page
-		Then Test
+		Then Test page
 
 	
 

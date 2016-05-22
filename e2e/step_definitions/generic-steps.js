@@ -23,12 +23,12 @@ module.exports = function () {
 
   this.Then(/^Open app page$/,{timeout: 20000},  function (next) {
    
-    browser.get(baseURL+'www').then(function () {
+    browser.get(baseURL+'www/build').then(function () {
       
       browser.waitForAngular();
 
       browser.getCurrentUrl().then(function(currentUrl){
-     		expect( currentUrl ).to.be.equal(baseURL+'www/#/home');
+     		expect( currentUrl ).to.be.equal(baseURL+'www/build/#/home');
      		next()
       });
 
@@ -36,8 +36,16 @@ module.exports = function () {
 
   });
 
-  this.Then(/^Test$/, function (next) {
-  	next()
+  this.Then(/^Test page$/, function (next) {
+  	element(by.id('abc')).getText().then(function(v) {
+      element(by.id('dsadsa')).isPresent().then(function(val) {
+        console.log(val)
+        expect( val ).to.equal(true);
+        next()
+      })
+      
+      
+    })
  	});
 
 
