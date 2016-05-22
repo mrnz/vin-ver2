@@ -32,7 +32,7 @@ module.exports = function () {
       browser.waitForAngular();
 
       browser.getCurrentUrl().then(function(currentUrl){
-     		expect( currentUrl ).to.be.equal('https://angularjs.org/');
+     		expect( currentUrl ).to.be.equal('https://angularjs.org/dsa');
      		next()
       });
 
