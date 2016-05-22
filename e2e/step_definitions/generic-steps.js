@@ -47,7 +47,7 @@ module.exports = function () {
       browser.waitForAngular();
 
       browser.getCurrentUrl().then(function(currentUrl){
-     		expect( currentUrl ).to.be.equal('https://angularjs.org/dsa');
+     		expect( currentUrl ).to.be.equal(baseURL+'www/#/home');
      		next()
       });
 
