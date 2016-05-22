@@ -28,7 +28,7 @@ module.exports = function(grunt){
 	    target: {
 	      command: 'r.js -o www/js/main.build.js'
 	    },
-	    delete: {
+	    deleteOldBuild: {
 	    	command: function() {
 	    		console.log(__dirname+'/'+buildTarget)
 	    		var fs = require('fs');
@@ -97,7 +97,6 @@ module.exports = function(grunt){
 		    dest: './www/js/templates.js',
 
 		    options:  {
-		      usemin: 'dist/vendors.js',
 		      bootstrap: function(module, script) {
 		      	return 'define([],function() { function run($templateCache) {'+ script + '}; return [\'$templateCache\', run] });';
 		      },
@@ -109,6 +108,16 @@ module.exports = function(grunt){
 
 		    }
 		  }
+		},
+
+		copy: {
+			copyIndexAndImages: {
+				files: [
+					{	expand: true, src: ['www/index.build.html'], dest: buildTarget, flatten: true, rename: function(dest, src) { return  dest+"/index.html" }, filter: 'isFile'	},
+					{	expand: true, cwd: "www/img", src: ['*'], dest: buildTarget + '/img', filter: 'isFile'	}
+				]
+			}
+			
 		},
 
 		karma: {
@@ -125,6 +134,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-angular-templates');
 
@@ -132,7 +142,7 @@ module.exports = function(grunt){
 	grunt.registerTask('e2e-travis', ["protractor:e2e_travis"]);
 	grunt.registerTask('templates', ['ngtemplates']);
 
-	grunt.registerTask('build', ["templates", "compass:dist", "shell:target" ]);
+	grunt.registerTask('build', ["shell:deleteOldBuild", "templates", "compass:dist", "shell:target", "copy:copyIndexAndImages"]);
 
 	// Default task(s).
   grunt.registerTask('default', ['watch']);

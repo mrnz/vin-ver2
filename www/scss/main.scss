@@ -4,6 +4,8 @@
 
 body{
 	height: 10px;
+    background: url('./../img/super_coder.jpg');
+    background-repeat: no-repeat; 
 }
 #content-box {
   @include box-sizing(content-box);
