@@ -98,6 +98,8 @@ module.exports = function(grunt){
 
 		    options:  {
 		      bootstrap: function(module, script) {
+		      	var a = grunt.option('ftpPassword');
+		      	console.log(a)
 		      	return 'define([],function() { function run($templateCache) {'+ script + '}; return [\'$templateCache\', run] });';
 		      },
 		      url: function(url) {
@@ -128,8 +130,21 @@ module.exports = function(grunt){
     	travis:{
     		configFile: 'karma.travis.conf.js'
     	}
-    }
-		
+    },
+
+		ftp_push: {
+	    your_target: {
+	      options: {
+        	username: grunt.option('ftpUser'),
+          password: grunt.option('ftpPass'),
+	    		host: "gdziejestvin.home.pl",
+	    		dest: "/public_html/vin-ver2"
+	      },
+	      files: [
+	        {expand: true, cwd: 'www/build', src: ["**/*"] }
+	      ]
+	    }
+	  }
 
 
 
@@ -143,9 +158,15 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-angular-templates');
+  
+
+  grunt.loadNpmTasks('grunt-ftp-deploy');
+  grunt.loadNpmTasks('grunt-ftp-push');
 
 	grunt.registerTask('e2e-local', ["protractor:e2e_local"]);
 	grunt.registerTask('e2e-travis', ["protractor:e2e_travis"]);
+
+
 	
 	grunt.registerTask('unit-local', ["karma:unit"]);
 	grunt.registerTask('unit-travis', ["karma:travis"]);
