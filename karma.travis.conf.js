@@ -11,17 +11,21 @@ module.exports = function(config) {
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine', 'requirejs'],
-
+    
+    
 
     // list of files / patterns to load in the browser
     files: [
-        {pattern: '../node_modules/angular/angular.min.js', included: false},
-        {pattern: '../angular-ui-router/release/angular-ui-router', included: false},
-        {pattern: '../node_modules/angular-mocks/angular-mocks.js', included: false},
-        {pattern: '../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls', included: false},
-        {pattern: 'js/*', included: false},
-        {pattern: 'js/**/*', included: false},
-        'test-main.js'
+        
+        'tests/test-main.js',
+        {pattern: 'node_modules/angular/angular.js', included: false},
+        {pattern: 'node_modules/angular-ui-router/release/angular-ui-router.min.js', included: false},
+        {pattern: 'node_modules/angular-mocks/angular-mocks.js', included: false},
+        {pattern: 'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js', included: false},
+        {pattern: 'www/js/**/*.js', included: false},
+        {pattern: 'tests/*.test.js', included: false},
+        {pattern: 'tests/**/*.test.js', included: false}
+        
     ],
 
 
@@ -61,9 +65,18 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Firefox'],
 
 
+	customLaunchers: {
+	  chrome_without_security: {
+	    base: 'Chrome',
+	    flags: ['--disable-web-security'],
+	    displayName: 'Chrome w/o security'
+	  }
+	},
+
+    captureTimeout: 60000,
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,

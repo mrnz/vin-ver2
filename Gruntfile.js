@@ -120,11 +120,16 @@ module.exports = function(grunt){
 			
 		},
 
+
 		karma: {
-	  	unit: {
-	    	configFile: 'karma.conf.js'
-	  	}
-		}
+    	unit: {
+    		configFile: 'karma.conf.js'
+    	},
+    	travis:{
+    		configFile: 'karma.travis.conf.js'
+    	}
+    }
+		
 
 
 
@@ -132,6 +137,7 @@ module.exports = function(grunt){
 	
 	grunt.loadNpmTasks('grunt-protractor-runner');
 	grunt.loadNpmTasks('grunt-shell');
+	grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-copy');
@@ -140,6 +146,10 @@ module.exports = function(grunt){
 
 	grunt.registerTask('e2e-local', ["protractor:e2e_local"]);
 	grunt.registerTask('e2e-travis', ["protractor:e2e_travis"]);
+	
+	grunt.registerTask('unit-local', ["karma:unit"]);
+	grunt.registerTask('unit-travis', ["karma:travis"]);
+
 	grunt.registerTask('templates', ['ngtemplates']);
 
 	grunt.registerTask('build', ["shell:deleteOldBuild", "templates", "compass:dist", "shell:target", "copy:copyIndexAndImages"]);
