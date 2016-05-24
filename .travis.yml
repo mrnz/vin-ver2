@@ -13,8 +13,8 @@ before_script:
 - ./node_modules/protractor/bin/webdriver-manager start 2>&1 &
 - sleep 3
 script:
-- grunt build
 - grunt unit-travis
+- grunt build
 - grunt e2e-travis
 - grunt ftp_push --ftpUser=$USERNAME --ftpPass=$PASSWORD
 env:

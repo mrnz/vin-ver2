@@ -40,7 +40,6 @@ module.exports = function(grunt){
 	    		}
 	    	}
 	    }
-	    // another: 'ls ./src' // shorthand
 	  },
 
 
@@ -95,16 +94,11 @@ module.exports = function(grunt){
 		  app:        {
 		    src: './www/templates/**.html',
 		    dest: './www/js/templates.js',
-
 		    options:  {
 		      bootstrap: function(module, script) {
-		      	var a = grunt.option('ftpPassword');
-		      	console.log(a)
 		      	return 'define([],function() { function run($templateCache) {'+ script + '}; return [\'$templateCache\', run] });';
 		      },
 		      url: function(url) {
-		    		console.log(url)
-		    		console.log(__dirname)
 		    		return url.replace(  './www/', '' );
 		    	},
 
@@ -158,9 +152,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-angular-templates');
-  
-
-  grunt.loadNpmTasks('grunt-ftp-deploy');
   grunt.loadNpmTasks('grunt-ftp-push');
 
 	grunt.registerTask('e2e-local', ["protractor:e2e_local"]);
