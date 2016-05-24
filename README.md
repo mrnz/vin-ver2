@@ -4,4 +4,4 @@
 
 [![Dependency Status](https://david-dm.org/mrnz/vin_ver2.svg)](https://david-dm.org/mrnz/vin-ver2)
 
-[![devDependency Status](https://david-dm.org/mrnz/vin_ver2/dev-status.png)](https://david-dm.org/mrnz/vin-ver2#info=devDependencies)
+[![devDependency Status](https://david-dm.org/mrnz/vin-ver2/dev-status.svg)](https://david-dm.org/mrnz/vin-ver2#info=devDependencies)
