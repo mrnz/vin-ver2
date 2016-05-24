@@ -1,0 +1,33 @@
+@import "compass";
+
+
+
+body{
+	height: 10px;
+    background: url('./../img/super_coder.jpg');
+    background-repeat: no-repeat; 
+}
+#content-box {
+  @include box-sizing(content-box);
+}
+
+
+$colour1: rgb(255,255,255); // white
+$colour2: rgb(255,0,0); // red
+$colour3: rgb(135,206,250); // sky blue
+$colour4: rgb(255,255,0);   // yellow
+
+$colors: $colour1, $colour2, $colour3, $colour4;
+$percent: 5%;
+
+@for $i from 1 through 5{
+    ul li:nth-child(#{$i}#{$i}) {
+        background-color: darken($colour2, $percent);
+
+        &:hover {
+            background-color:invert( darken($colour2, $percent) ) ;
+            cursor: pointer;
+        }
+    }
+    $percent: $percent + 5%;
+}

@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - "5"
+before_install:
+  - gem update --system
+  - gem install compass
 before_script:
   - npm install -g grunt
   - npm i
@@ -10,4 +13,6 @@ before_script:
   - ./node_modules/protractor/bin/webdriver-manager update --standalone --firefox
   - ./node_modules/protractor/bin/webdriver-manager start 2>&1 &
   - sleep 3
-script: grunt e2e-travis
+script: 
+ - grunt build
+ - grunt e2e-travis
