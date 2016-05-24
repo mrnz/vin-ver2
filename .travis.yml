@@ -1,19 +1,23 @@
 language: node_js
-secure: "IZBLcUmk9m9PhThqeLSorCkyOOAnl3/93kxDJfD04KhgtGlBPlhsL9M3l5z5ZBaGx8KiyyNdMcExdS0G1TfKSQioUXbGX0NfB69K/iv/CICFsx1Dpeq1IxTNsRDkt81+sJH+JjWjay2iJMn71uau/zQFwMzqrA88tbFGJknhuVoYxbrvVrwb+1C9z1diFT0ClRiqI9BBEdSlWH0/4/H8pcDmPsJNyunkJRifFvY7ldHUh861mCQXRMTlhfAGk70Z/49b4A9wTZekDFP/cKuAWaQmr/E/xRJEIr8xJWlXL0ADAo9fKr2OmIBp6J+zat6xy0Jg8/EXHSSSceaJuG8qaMJ2t/EpzeNCGmovygtXO0/YRf3ReFQOiimAwpI4X5miPahv3GWls++IKOZ5BxUZ5b0JWttMHkyZ59lszxDc/Bx0+M9uoYvgtMyyP/o9mf7RpDnV3V+MhlOBKuwhB2kg4qaMMhN3heIEtiXlEA3pR5cXAGaNaqppQ809uk+VJp1ZieY0fU4bsxYdzlDbFjbrL12khaEHMlZdJiBM10fbr0tRszRt1D9/rONqsedjNjqDAhHnOM2/hQ0chg2sBv/JolfDa5hxbk19vSr7bdA0pCNmIrQjwUzstU45mzz6/mRbFfhNvdrB83qowKm7Pxy3vlo7vsXkesuaGqJBg0pT6rs="
+env:
+ global:
+ - secure: "IZBLcUmk9m9PhThqeLSorCkyOOAnl3/93kxDJfD04KhgtGlBPlhsL9M3l5z5ZBaGx8KiyyNdMcExdS0G1TfKSQioUXbGX0NfB69K/iv/CICFsx1Dpeq1IxTNsRDkt81+sJH+JjWjay2iJMn71uau/zQFwMzqrA88tbFGJknhuVoYxbrvVrwb+1C9z1diFT0ClRiqI9BBEdSlWH0/4/H8pcDmPsJNyunkJRifFvY7ldHUh861mCQXRMTlhfAGk70Z/49b4A9wTZekDFP/cKuAWaQmr/E/xRJEIr8xJWlXL0ADAo9fKr2OmIBp6J+zat6xy0Jg8/EXHSSSceaJuG8qaMJ2t/EpzeNCGmovygtXO0/YRf3ReFQOiimAwpI4X5miPahv3GWls++IKOZ5BxUZ5b0JWttMHkyZ59lszxDc/Bx0+M9uoYvgtMyyP/o9mf7RpDnV3V+MhlOBKuwhB2kg4qaMMhN3heIEtiXlEA3pR5cXAGaNaqppQ809uk+VJp1ZieY0fU4bsxYdzlDbFjbrL12khaEHMlZdJiBM10fbr0tRszRt1D9/rONqsedjNjqDAhHnOM2/hQ0chg2sBv/JolfDa5hxbk19vSr7bdA0pCNmIrQjwUzstU45mzz6/mRbFfhNvdrB83qowKm7Pxy3vlo7vsXkesuaGqJBg0pT6rs="
+ - secure: "StLO0FqtMj7Q5tjkZerQAAkLkIfsXS5/IicsV4n3qzlV+rUwFzYMkEYXqeUXt3vymCPPnL7YvVa6TSzvFrJK+LgsgkxY57jvi8H3HYMghgkwL7fEFt8tnU/Nsan5wh7KIzK+UfBdTe2b4StJA9/j9mUp3NIBftaBvobA5BrbHvI3oVJA/ZIandVjUY9ERmKvLtkW9lHIU7xr4C6dkcAQYrmEWtJAOB5JU3JhuRXPriuRLBTW1ZDjl69QTN4gSFKG4d7GLUMKCRQJQQqG1g3q9g203tFmWfZz7DKeUy8yV5BDbL6Orb7/9PvSeDLByPSsf3azSGGvqlPURWVWemeSi3sEgig8An9MBf/ZrI/5R27S9Aeo5O/So8MyS0UuYOXQx3nqQAc4v7uyKruX+QEbL05LcjviAngJepoW4dvW6Qypi0U+6jfRJSsCOqLiUxBRegLAKgzU0FAdN77DOn5RXZ1lpmpNzwnauNwaDfAlyijh79tbM5zJzqB+cC8Ys5Hhwmz5SZLa44Se4Zlb4ZlrNZRlvh8LdmgYe1Si5I/gDaflEO11pXdUDUngU4Qy+tjqvAKk6VyowM06L39shhjG+YmMh62BxbAZRezwyFrjg0e/is0DuhXZW/y0daUiqJo+K94742tAZAtJevZdaltqXHo7tyNNQw90ymXv2hQpo3M="
 node_js:
-  - "5"
+ - "5"
 before_install:
-  - gem update --system
-  - gem install compass
+ - gem update --system
+ - gem install compass
 before_script:
-  - npm install -g grunt
-  - npm i
-  - "export DISPLAY=:99.0"
-  - sh -e /etc/init.d/xvfb start
-  - sleep 3
-  - ./node_modules/protractor/bin/webdriver-manager update --standalone --firefox
-  - ./node_modules/protractor/bin/webdriver-manager start 2>&1 &
-  - sleep 3
+ - "curl -T README.md -u $USERNAME:$PASSWORD ftp://gdziejestvin.home.pl/public_html/vin-ver2"
+ - npm install -g grunt
+ - npm i
+ - "export DISPLAY=:99.0"
+ - sh -e /etc/init.d/xvfb start
+ - sleep 3
+ - ./node_modules/protractor/bin/webdriver-manager update --standalone --firefox
+ - ./node_modules/protractor/bin/webdriver-manager start 2>&1 &
+ - sleep 3
 script: 
  - grunt build
  - grunt unit-travis
