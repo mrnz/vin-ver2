@@ -15,5 +15,5 @@ before_script:
   - sleep 3
 script: 
  - grunt build
- - unit-travis
+ - grunt unit-travis
  - grunt e2e-travis
