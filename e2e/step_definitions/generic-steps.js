@@ -6,7 +6,7 @@ var expect = chai.expect;
 
 chai.use(chaiAsPromised);
 
-var baseURL = 'http://localhost:8098/'
+var baseURL = 'http://localhost:8098/';
 
 module.exports = function () {
 	
@@ -29,7 +29,7 @@ module.exports = function () {
 
       browser.getCurrentUrl().then(function(currentUrl){
      		expect( currentUrl ).to.be.equal(baseURL+'www/build/#/home');
-     		next()
+     		next();
       });
 
     });
@@ -39,8 +39,8 @@ module.exports = function () {
   this.Then(/^Test page$/, function (next) {
   	element( by.id('super-coder') ).isPresent().then(function(result) {
       expect( result ).to.equal(true);
-      next()
-    })
+      next();
+    });
      
       // element(by.id('dsadsa')).isPresent().then(function(val) {
       //   console.log(val)
@@ -53,4 +53,4 @@ module.exports = function () {
  	});
 
 
-}
+};

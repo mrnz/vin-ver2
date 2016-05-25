@@ -14,8 +14,8 @@ define([], function() {
 			{id: 3, name: 'nissan' },
 			{id: 4, name: 'fiat' },
 			{id: 5, name: 'bmw' },
-		]
+		];
 	};
 
-	return ['$scope', ctrl]
+	return ['$scope', ctrl];
 });

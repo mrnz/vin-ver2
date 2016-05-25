@@ -26,5 +26,5 @@
 	include: ['main'],
 	insertRequire: ['main'],
 	wrap: true
-})
+});
 

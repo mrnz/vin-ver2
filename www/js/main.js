@@ -26,5 +26,5 @@ require.config({
 });
 
 require(['uiBootstrap', 'app'], function (aa, app) {
-	angular.bootstrap(document, ['app'])
+	angular.bootstrap(document, ['app']);
 });
