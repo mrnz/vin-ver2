@@ -16,7 +16,7 @@ script:
 - grunt unit-travis
 - grunt build
 - grunt e2e-travis
-- grunt ftp_push --ftpUser=$USERNAME --ftpPass=$PASSWORD
+- if [ "$TRAVIS_BRANCH" == "master" ]; then grunt ftp_push --ftpUser=$USERNAME --ftpPass=$PASSWORD; fi
 env:
   global:
   - secure: HwPl6j6fu69KRN2rUtBEYURBM8eRJxynHpN5U/RkJxtT0z3EFal09vHOPiE9yN5TEMilSvECvZRn7aJr2xZnYr+FY/HdeOoepAeBe97hv9aW3JVrAWcmZdLFOnb5aHdNkwSgOd6E9fpXfe5O3EzwsjunriPg8FH3ZGmBKA5rRh/w5ufd1UbPj+WKpkzDNXvZmUuU1espEOOZJP+MxE/qCnkp3Km9GUzRAjHd28HefzFCVM/9aMutljpuUrdU/wRDZ+lFmi/6wtORmnk0012eSgxTWMVxk0t1TKpd2m3qqWoiBKX/thS+dz7qCZ8o/+DEbCtZJaQtYBY9/bd6AqQlu05AnXq8pegGfTaDRWUp5zOO3J8Ugu5k6Nbz6MxkZKuqe2EbD3y4IXys4LSWzSxf4SpN6ZjbAkDpiFWssHvxwgBEbQDFZOslY1B+lG0JUs+IXgtZYQHn7pMyS5QqSGkkm8kjTKktdjT/jadLz5ms5igBeMzcs9tiHGS744ZoBEuBV8Z41nyFapOp0f//2hqEBWAhKjOWOJtcKYdxwzRIejh15B3/rET812VhOhPI7gA5lDjrnaBAIXwKapIW1OEXfg39fn6yOOuC++fCpHXbQg2lGZWvO6BiA9DO2IFXn8OHF5GyVKZrVGzx7pQC174saHcnSwNhssABKN/agwfBQVQ=
