@@ -43,7 +43,7 @@
     "**/extjs/welcome/**",
     "bower_components/**",
     "**/main.build.js",
-
+    "www/js/templates.js"
   ],
   "test": [
     "**/test/**",
