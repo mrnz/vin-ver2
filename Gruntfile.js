@@ -138,9 +138,17 @@ module.exports = function(grunt){
 	        {expand: true, cwd: 'www/build', src: ["**/*"] }
 	      ]
 	    }
-	  }
+	  },
 
-
+		coveralls: {
+		    options: {
+		        debug: true,
+		        coverageDir: 'directory name',
+		        dryRun: true,
+		        force: true,
+		        recursive: true
+		    }
+		}
 
 	});
 	
@@ -153,6 +161,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-angular-templates');
   grunt.loadNpmTasks('grunt-ftp-push');
+  grunt.loadNpmTasks('grunt-karma-coveralls');
 
 	grunt.registerTask('e2e-local', ["protractor:e2e_local"]);
 	grunt.registerTask('e2e-travis', ["protractor:e2e_travis"]);
