@@ -16,7 +16,7 @@ define(['uiRouter', 'uiBootstrap', 'templates', 'homeCtrl'], function(uiRouter, 
 				url:'/home',
 				templateUrl: 'templates/home.html',
 				controller: 'homeCtrl'
-			})
+			});
 
 	}]);
 

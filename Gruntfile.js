@@ -2,7 +2,7 @@
 
 
 var path = require('path');
-var buildTarget = 'www/build' 
+var buildTarget = 'www/build';
 
 module.exports = function(grunt){
 
@@ -30,7 +30,7 @@ module.exports = function(grunt){
 	    },
 	    deleteOldBuild: {
 	    	command: function() {
-	    		console.log(__dirname+'/'+buildTarget)
+	    		console.log(__dirname+'/'+buildTarget);
 	    		var fs = require('fs');
 	    		try{
 	    			fs.statSync(__dirname+'/'+buildTarget).isDirectory();
@@ -96,7 +96,7 @@ module.exports = function(grunt){
 		    dest: './www/js/templates.js',
 		    options:  {
 		      bootstrap: function(module, script) {
-		      	return 'define([],function() { function run($templateCache) {'+ script + '}; return [\'$templateCache\', run] });';
+		      	return 'define([],function() { function run($templateCache) {'+ script + '}; return [\'$templateCache\', run]; });';
 		      },
 		      url: function(url) {
 		    		return url.replace(  './www/', '' );
@@ -109,7 +109,7 @@ module.exports = function(grunt){
 		copy: {
 			copyIndexAndImages: {
 				files: [
-					{	expand: true, src: ['www/index.build.html'], dest: buildTarget, flatten: true, rename: function(dest, src) { return  dest+"/index.html" }, filter: 'isFile'	},
+					{	expand: true, src: ['www/index.build.html'], dest: buildTarget, flatten: true, rename: function(dest, src) { return  dest+"/index.html"; }, filter: 'isFile'	},
 					{	expand: true, cwd: "www/img", src: ['*'], dest: buildTarget + '/img', filter: 'isFile'	}
 				]
 			}
