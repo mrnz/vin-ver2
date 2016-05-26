@@ -7,7 +7,8 @@ define(['uiRouter', 'uiBootstrap', 'templates', 'homeCtrl'], function(uiRouter, 
 	app.controller('homeCtrl', homeCtrl);
 
 	
-	app.config(["$stateProvider", "$urlRouterProvider", "$httpProvider",function($stateProvider, $urlRouterProvider, $httpProvider) {
+
+	app.config(["$stateProvider", "$urlRouterProvider", "$httpProvider",function($stateProvider, $urlRouterProvider, $httpProvider ) {
 		
 		$urlRouterProvider.otherwise('/home');
 		
